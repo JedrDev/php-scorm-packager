@@ -51,7 +51,7 @@ class ZipArchiveHelper
 
         foreach ($files as $name => $file) {
             if (!$file->isDir()) {
-                $filePath = $file->getRealPath();
+                $filePath = $file->getPathName();
                 $relativePath = substr($filePath, strlen($pathToDirectory) + 1);
 
                 $zipArchive->addFile($filePath, $relativePath);
